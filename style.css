@@ -1,0 +1,337 @@
+/***********************************
+  font setting
+***********************************/
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("PT Sans"), local("PTSans-Regular"), url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0-ExdGM.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("PT Sans"), local("PTSans-Regular"), url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0aExdGM.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("PT Sans"), local("PTSans-Regular"), url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0yExdGM.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local("PT Sans"), local("PTSans-Regular"), url(https://fonts.gstatic.com/s/ptsans/v10/jizaRExUiTo99u79D0KExQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/***********************************
+  clearfix
+***********************************/
+/* for modern brouser */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/* IE7,MacIE5 */
+.clearfix {
+  display: inline-block;
+}
+
+/* WinIE6 below, Exclude MacIE5 \*/
+* html .clearfix {
+  height: 1%;
+}
+
+.clearfix {
+  display: block;
+}
+
+/***********************************
+  media screen
+***********************************/
+/***********************************
+  basic style
+***********************************/
+body {
+  margin: 0;
+  background-color: #f3f3f3;
+  font-family: 'PT Sans', 'Arial';
+}
+
+h1 {
+  text-align: center;
+  color: #444;
+  font-size: 36px;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 980px) {
+  h1 {
+    font-size: 23px;
+  }
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #FFCF43;
+  font-size: 30px;
+}
+@media screen and (max-width: 980px) {
+  h2 {
+    font-size: 21px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+/***********************************
+  content
+***********************************/
+.header-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper {
+    width: 90%;
+    padding: 0 5%;
+  }
+}
+.header-wrapper .authors {
+  margin: 30px auto 0;
+  display: table;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .authors {
+    margin: 10px auto 0;
+    text-align: center;
+  }
+}
+.header-wrapper .authors p {
+  float: left;
+  font-size: 21px;
+  margin: 0;
+  margin-right: 58px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .authors p {
+    font-size: 16px;
+    margin-right: 10px;
+    float: none;
+  }
+}
+.header-wrapper .authors a {
+  color: #3376cb;
+}
+.header-wrapper .belongs {
+  margin: 20px auto 0;
+  display: table;
+  font-size: 23px;
+}
+.header-wrapper .belongs p {
+  text-align: center;
+  margin: 0;
+  font-size: 23px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .belongs p {
+    font-size: 14px;
+  }
+}
+.header-wrapper .header-demo {
+  margin: 30px auto;
+  display: table;
+}
+.header-wrapper .header-demo ul li {
+  float: left;
+  width: 300px;
+  margin-right: 16px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .header-demo ul li {
+    width: 25%;
+    margin-right: 5%;
+  }
+}
+.header-wrapper .header-demo ul li p {
+  text-align: center;
+  font-weight: bold;
+  margin: 6px 0;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .header-demo ul li p {
+    font-size: 12px;
+  }
+}
+.header-wrapper .header-demo ul li img {
+  width: 100%;
+}
+.header-wrapper .header-demo ul li:first-child {
+  position: relative;
+  margin-right: 50px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .header-demo ul li:first-child {
+    margin-right: 10%;
+  }
+}
+.header-wrapper .header-demo ul li:first-child:after {
+  position: absolute;
+  left: 318px;
+  top: 82px;
+  content: ' ';
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  border-width: 56px 16px;
+  border-left-color: #888;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .header-demo ul li:first-child:after {
+    left: 112%;
+    top: 30%;
+    border-width: 30px 14px;
+  }
+}
+.header-wrapper .abstract h2 {
+  color: #666;
+}
+
+.header-wrapper .files {
+  display: table;
+  margin: 0 auto;
+}
+.header-wrapper .files p {
+  font-size: 25px;
+  float: left;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .files p {
+    font-size: 19px;
+  }
+}
+.header-wrapper .files p:first-child {
+  margin-right: 40px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .files p:first-child {
+    margin-right: 20px;
+  }
+}
+.header-wrapper .files p:first-child a {
+  color: #3376cb;
+}
+
+.contents {
+  background-color: #000;
+  border-top: #414141 20px solid;
+}
+.contents .contents-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+@media screen and (max-width: 980px) {
+  .contents .contents-wrapper {
+    width: 90%;
+    padding: 30px 5%;
+  }
+}
+.contents .contents-wrapper section {
+  margin-bottom: 60px;
+}
+.contents .contents-wrapper h2 {
+  color: #666;
+  margin-bottom: 30px;
+}
+.contents .contents-wrapper p {
+  color: #bbb;
+}
+.contents .contents-wrapper pre {
+  color: #bbb;
+  margin: 30px;
+}
+@media screen and (max-width: 980px) {
+  .contents .contents-wrapper .table-cover {
+    width: 100%;
+    overflow: scroll;
+  }
+}
+.contents .contents-wrapper table {
+  text-align: center;
+  border-color: grey;
+  border-spacing: 2px;
+  width: 100%;
+  margin-bottom: 30px;
+  border-collapse: collapse;
+}
+.contents .contents-wrapper table .border-under th, .contents .contents-wrapper table .border-under td {
+  border-bottom: #555 1px solid;
+}
+.contents .contents-wrapper table th, .contents .contents-wrapper table td {
+  height: 40px;
+  vertical-align: middle;
+  color: #bbb;
+}
+.contents .compare-images td, .contents .compare-images th {
+  width: 18%;
+}
+.contents .compare-images img {
+  width: 100%;
+}
+.contents .demo-images {
+  margin-bottom: 30px;
+}
+.contents .video {
+  margin: 0 auto;
+  display: table;
+  position: relative;
+}
+@media screen and (max-width: 980px) {
+  .contents .video {
+    display: block;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  .contents .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .contents pre {
+    width: 100%;
+    overflow: scroll;
+}
+}
+
+/*# sourceMappingURL=style.css.map */

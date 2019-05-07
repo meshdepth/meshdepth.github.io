@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MeshDepth</title>
+    <meta charset='UTF-8'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+    <meta content='width=device-width,initial-scale=1' name='viewport'>
+  </head>
+  <body>
+    <header>
+      <div class='header-wrapper'>
+        <h1>MeshDepth: Disconnected Mesh-based Deep Depth Prediction</h1>
+        <div class='authors clearfix'>
+          <p>
+            Masaya Kaneko
+            <sup>1,2</sup>
+          </p>
+          <p>
+            <a href='https://kensakurada.github.io'>
+              Ken Sakurada
+            </a>
+            <sup>2</sup>
+          </p>
+          <p>
+            <a href='https://www.hal.t.u-tokyo.ac.jp/~aizawa/'>
+              Kiyoharu Aizawa
+            </a>
+            <sup>1</sup>
+          </p>
+        </div>
+        <div class='belongs'>
+          <p>
+            The University of Tokyo
+            <sup>1</sup>
+          </p>
+          <p>
+            National Institute of Advanced Industrial Science and Technology (AIST)
+            <sup>2</sup>
+          </p>
+        </div>
+        <div class='header-demo'>
+          <ul class='clearfix'>
+            <li>
+              <p>Iunput image</p>
+              <img src='MeshDepth_files/000093_rgb.png'>
+            </li>
+            <li>
+              <p>Depthmap</p>
+              <img src='MeshDepth_files/000093_ours.png'>
+            </li>
+            <li>
+              <p>3D Mesh</p>
+              <img src='MeshDepth_files/000093_mesh.gif'>
+            </li>
+          </ul>
+        </div>
+        <div class='abstract'>
+          <h2>Abstract</h2>
+          <p>We propose a novel method for mesh-based single-view depth estimation using Convolutional Neural Networks (CNNs). Conventional CNN-based methods are only suitable for representing simple 3D objects because they estimate the deformation from a predefined simple mesh such as a cube or sphere. As a 3D scene representation, we introduce a disconnceted mesh made of 2D mesh adaptively determined on the input image. We made a CNN-based framework to compute depths and normals of faces of the mesh. Because of the representation, our method can handle complex indoor scenes. Using common RGBD datasets, we show that our model achieved best or comparable performance comparing to the state-of-the-art pixel-wise dense methods. It should be noted that our method significantly reduce the number of the parameter representing the 3D structure.</p>
+          <div class='files clearfix'>
+            <p>
+              [
+              <a href='https://arxiv.org/abs/1905.01312'>
+                Paper
+              </a>
+              ]
+            </p>
+            <p>[ Code ]</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class='contents'>
+      <div class='contents-wrapper'>
+        <section>
+          <h2>Depthmap Prediction</h2>
+          <p>
+            Quantitative (top) and qualitative (bottom) results showing our depthmap rendered from predicted 3D mesh. Our results achieved the best or comparabe performance to that of the state-of-the-art pixel-wise dense methods (Eigen
+            <i>et al.</i>
+            and Laina
+            <i>et al.</i>
+            ), despite the mesh representation using much less parameters.
+          </p>
+          <div class='table-cover'>
+            <table>
+              <thead>
+                <tr class='border-under'>
+                  <th>Method</th>
+                  <th>rel</th>
+                  <th>rms</th>
+                  <th>log10</th>
+                  <th>delta1</th>
+                  <th>delta2</th>
+                  <th>delta3</th>
+                  <th>#param.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Eigen
+                    <i>et al.</i>
+                  </td>
+                  <td>.158</td>
+                  <td>.641</td>
+                  <td>-</td>
+                  <td>.769</td>
+                  <td>.950</td>
+                  <td>
+                    <b>.988</b>
+                  </td>
+                  <td>921K</td>
+                </tr>
+                <tr class='border-under'>
+                  <td>
+                    Laina
+                    <i>et al.</i>
+                  </td>
+                  <td>
+                    <b>.127</b>
+                  </td>
+                  <td>.573</td>
+                  <td>
+                    <b>.055</b>
+                  </td>
+                  <td>
+                    <b>.811</b>
+                  </td>
+                  <td>.953</td>
+                  <td>
+                    <b>.988</b>
+                  </td>
+                  <td>921K</td>
+                </tr>
+                <tr>
+                  <td>
+                    Ours
+                  </td>
+                  <td>.146</td>
+                  <td>
+                    <b>.530</b>
+                  </td>
+                  <td>.062</td>
+                  <td>.803</td>
+                  <td>
+                    <b>.954</b>
+                  </td>
+                  <td>
+                    <b>.988</b>
+                  </td>
+                  <td>
+                    <b>32K</b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Since our depthmap is created by the 2D mesh extracted based on the canny edge, the object boundaries of our depthmap is clearer than that of the pixel-wise method.</p>
+          <table class='compare-images'>
+            <thead>
+              <tr>
+                <th>Input image</th>
+                <th>GT</th>
+                <th>Ours</th>
+                <th>
+                  Eigen
+                  <i>et al.</i>
+                </th>
+                <th>
+                  Laina
+                  <i>et al.</i>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000150_rgb.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000150_gt.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000150_ours.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000150_eigen_ori.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000150_laina_ori.png'>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000158_rgb.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000158_gt.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000158_ours.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000158_eigen_ori.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000158_laina_ori.png'>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000573_rgb.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000573_gt.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000573_ours.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000573_eigen_ori.png'>
+                </td>
+                <td>
+                  <img src='MeshDepth_files/depthmap/000573_laina_ori.png'>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>3D Mesh Prediction</h2>
+          <p>
+            These are 3D mesh predictions from a single-view image.
+            <br>
+            Our CNN framework can be trained end-to-end from general RGBD datasets without GT mesh data.
+          </p>
+          <div class='demo-images'>
+            <img src='MeshDepth_files/3d_mesh/000058.gif'>
+            <img src='MeshDepth_files/3d_mesh/000162.gif'>
+            <img src='MeshDepth_files/3d_mesh/000255.gif'>
+            <img src='MeshDepth_files/3d_mesh/000221.gif'>
+            <img src='MeshDepth_files/3d_mesh/000180.gif'>
+            <img src='MeshDepth_files/3d_mesh/000234.gif'>
+            <img src='MeshDepth_files/3d_mesh/000317.gif'>
+            <img src='MeshDepth_files/3d_mesh/000332.gif'>
+            <img src='MeshDepth_files/3d_mesh/000513.gif'>
+            <img src='MeshDepth_files/3d_mesh/000369.gif'>
+            <img src='MeshDepth_files/3d_mesh/000438.gif'>
+            <img src='MeshDepth_files/3d_mesh/000638.gif'>
+          </div>
+        </section>
+        <section>
+          <h2>Video</h2>
+          <div class='video'>
+            <iframe allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscrean frameborder='0' height='315' src='https://www.youtube.com/embed/ZPG6UFpYcI4' width='560'></iframe>
+          </div>
+        </section>
+        <section>
+          <h2>Citation</h2>
+<pre>
+@misc{XXXX.XXXXX,
+  Author = {Masaya Kaneko and Ken Sakurada and Kiyoharu Aizawa},
+  Title = {MeshDepth: Disconnected Mesh-based Deep Depth Prediction},
+  Year = {2019},
+  Eprint = {arXiv:1905.01312},
+}
+</pre>
+        </section>
+        <section>
+          <h2>Acknowledgements</h2>
+          <p>
+            We thank 
+            <a href='https://seishin55.com/'>
+              Shizuma Kubo
+            </a>
+            for modifying the code of this webpage, whose template design was borrowed from
+            <a href='https://keypointnet.github.io/'>
+              keypointnet webpage
+            </a>
+            . 
+          </p>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
