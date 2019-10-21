@@ -150,6 +150,23 @@ p {
 .header-wrapper .authors a {
   color: #3376cb;
 }
+
+.header-wrapper .conference {
+  margin: 20px auto 0;
+  display: table;
+  font-size: 23px;
+}
+.header-wrapper .conference p {
+  text-align: center;
+  margin: 0;
+  font-size: 25px;
+}
+@media screen and (max-width: 980px) {
+  .header-wrapper .conference p {
+    font-size: 14px;
+  }
+}
+
 .header-wrapper .belongs {
   margin: 20px auto 0;
   display: table;

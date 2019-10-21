@@ -9,7 +9,10 @@
   <body>
     <header>
       <div class='header-wrapper'>
-        <h1>MeshDepth: Disconnected Mesh-based Deep Depth Prediction</h1>
+        <h1>TriDepth: Triangular Patch-based Deep Depth Prediction</h1>
+        <div class='conference'>
+          <p><a href='http://www.visualslam.ai/'>ICCV Deep Learning for Visual SLAM Workshop 2019 (oral)</a></p>
+        </div>
         <div class='authors clearfix'>
           <p>
             Masaya Kaneko
@@ -49,14 +52,14 @@
               <img src='MeshDepth_files/000093_ours.png'>
             </li>
             <li>
-              <p>3D Mesh</p>
+              <p>Triangular-patch-cloud</p>
               <img src='MeshDepth_files/000093_mesh.gif'>
             </li>
           </ul>
         </div>
         <div class='abstract'>
           <h2>Abstract</h2>
-          <p>We propose a novel method for mesh-based single-view depth estimation using Convolutional Neural Networks (CNNs). Conventional CNN-based methods are only suitable for representing simple 3D objects because they estimate the deformation from a predefined simple mesh such as a cube or sphere. As a 3D scene representation, we introduce a disconnected mesh made of 2D mesh adaptively determined on the input image. We made a CNN-based framework to compute depths and normals of faces of the mesh. Because of the representation, our method can handle complex indoor scenes. Using common RGBD datasets, we show that our model achieved best or comparable performance comparing to the state-of-the-art pixel-wise dense methods. It should be noted that our method significantly reduce the number of the parameter representing the 3D structure.</p>
+          <p>We propose a novel and efficient representation for single-view depth estimation using Convolutional Neural Networks (CNNs). Point-cloud is generally used for CNN-based 3D scene reconstruction; however it has some drawbacks: (1) it is redundant as a representation for planar surfaces, and (2) no spatial relationships between points are available (e.g, texture and surface). As a more efficient representation, we introduce a triangular-patch-cloud, which represents the surface of the 3D structure using a set of triangular patches, and propose a CNN framework for its 3D structure estimation. In our framework, we create it by separating all the faces in a 2D mesh, which are determined adaptively from the input image, and estimate depths and normals of all the faces. Using a common RGBD-dataset, we show that our representation has a better or comparable performance than the existing point-cloud-based methods, although it has much less parameters.</p>
           <div class='files clearfix'>
             <p>
               [
@@ -251,18 +254,16 @@
         </section>
         <section>
           <h2>Video</h2>
-          <div class='video'>
-            <iframe allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscrean frameborder='0' height='315' src='https://www.youtube.com/embed/ZPG6UFpYcI4' width='560'></iframe>
-          </div>
+          <p>Coming soon...</p>
         </section>
         <section>
           <h2>Citation</h2>
 <pre>
-@misc{1905.01312,
+@misc{kaneko19tridepth,
   Author = {Masaya Kaneko and Ken Sakurada and Kiyoharu Aizawa},
-  Title = {MeshDepth: Disconnected Mesh-based Deep Depth Prediction},
+  Title = {TriDepth: Triangular Patch-based Deep Depth Prediction},
+  Booktitle = {ICCV Deep Learning for Visual SLAM Workshop},
   Year = {2019},
-  Eprint = {arXiv:1905.01312},
 }
 </pre>
         </section>
