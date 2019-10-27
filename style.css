@@ -188,7 +188,7 @@ p {
 }
 .header-wrapper .header-demo ul li {
   float: left;
-  width: 300px;
+  width: 200px;
   margin-right: 16px;
 }
 @media screen and (max-width: 980px) {
@@ -221,8 +221,8 @@ p {
 }
 .header-wrapper .header-demo ul li:first-child:after {
   position: absolute;
-  left: 318px;
-  top: 82px;
+  left: 220px;
+  top: 52px;
   content: ' ';
   width: 0;
   height: 0;
