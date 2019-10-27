@@ -193,8 +193,8 @@ p {
 }
 @media screen and (max-width: 980px) {
   .header-wrapper .header-demo ul li {
-    width: 25%;
-    margin-right: 5%;
+    width: 21%;
+    margin-right: 1%;
   }
 }
 .header-wrapper .header-demo ul li p {
@@ -205,6 +205,16 @@ p {
 @media screen and (max-width: 980px) {
   .header-wrapper .header-demo ul li p {
     font-size: 12px;
+    height: 29px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px 0;
+  }
+
+  .header-wrapper .header-demo ul li div {
+    display: table;
+    width: 100%;
+    text-align: center;
   }
 }
 .header-wrapper .header-demo ul li img {
@@ -232,9 +242,9 @@ p {
 }
 @media screen and (max-width: 980px) {
   .header-wrapper .header-demo ul li:first-child:after {
-    left: 112%;
-    top: 30%;
-    border-width: 30px 14px;
+    left: 118%;
+    top: 49%;
+    border-width: 17px 9px;
   }
 }
 .header-wrapper .abstract h2 {
