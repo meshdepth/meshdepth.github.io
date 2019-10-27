@@ -356,7 +356,6 @@ p {
     height: 100%;
   }
   .contents pre {
-    width: 100%;
     overflow: scroll;
 }
 }
