@@ -376,4 +376,11 @@ p {
   padding-top: 30px; 
 }
 
+.contents .compare-vis td, .contents .compare-vis th {
+  width: 18%;
+}
+.contents .compare-vis img {
+  width: 80%;
+}
+
 /*# sourceMappingURL=style.css.map */

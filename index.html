@@ -197,11 +197,28 @@
           </table>
         </section>
         <section>
-          <h2>3D Mesh Prediction</h2>
+          <h2>3D structure Visualization</h2>
           <p>
-            These are 3D mesh predictions from a single-view image.
-            <br>
-            Our CNN framework can be trained end-to-end from general RGBD datasets without GT mesh data.
+            These are our predictions of 3D triangular-patch-cloud (top) and its 3D mesh (bottom).
+            3D mesh can be easily obtained from our triangular-patch-cloud by connecting the adjacent neighbor patches.
+            This process can not only reduce the parameter size (the number of vertex) of 3D structure, but also make visualization result clean.
+          </p>
+          <table class='compare-vis'>
+            <tbody>
+              <tr>
+                <td><img src='MeshDepth_files/patch_cloud/000221_tpc.gif'></td>
+                <td><img src='MeshDepth_files/patch_cloud/000255_tpc.gif'></td>
+                <td><img src='MeshDepth_files/patch_cloud/000513_tpc.gif'></td>
+              </tr>
+              <tr>
+                <td><img src='MeshDepth_files/patch_cloud/000221.gif'></td>
+                <td><img src='MeshDepth_files/patch_cloud/000255.gif'></td>
+                <td><img src='MeshDepth_files/patch_cloud/000513.gif'></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Our method works well in other indoor scenes. These are some results of our 3D mesh prediction.
           </p>
           <div class='demo-images'>
             <img src='MeshDepth_files/3d_mesh/000058.gif'>
