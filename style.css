@@ -360,4 +360,20 @@ p {
 }
 }
 
+.overview-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 30px; 
+}
+
+.framework-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-top: 30px; 
+}
+
 /*# sourceMappingURL=style.css.map */

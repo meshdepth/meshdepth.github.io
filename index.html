@@ -94,89 +94,80 @@
     <div class='contents'>
       <div class='contents-wrapper'>
         <section>
+          <h2>Triangular-patch-cloud</h2>
+          <p>
+            We introduce a novel representation, triangle-patch-cloud, composed of triangular patches.
+            It is created by separating all the faces in a 2D mesh, adaptively determined by input image.
+            All of those patche's 3D position (depth + normal) are predicted by CNN.
+            This representation is more efficient than point-cloud representation, while its depth map has better or comparable performance than those of existing CNN-based poin-cloud methods.
+            <img src='MeshDepth_files/overview.jpg', class="overview-img">
+          </p>
+        </section>
+        <section>
           <h2>Depthmap Prediction</h2>
           <p>
-            Quantitative (top) and qualitative (bottom) results showing our depthmap rendered from predicted 3D mesh. Our results achieved the best or comparabe performance to that of the state-of-the-art pixel-wise dense methods (Eigen
-            <i>et al.</i>
-            and Laina
-            <i>et al.</i>
-            ), despite the mesh representation using much less parameters.
+            Quantitative (top) and qualitative (bottom) results showing our depth map rendered from predicted triangular-patch-cloud. 
+            We evaluate our method using NYU Depth v2 dataset [Silberman <i>et al.</i>, ECCV'12], and evaluate its depth map using general error metrics.
+            Our results achieved better or comparable performance to that of the existing deep depth prediction methods ([Eigen <i>et al.</i>, ICCV'15], [Laina <i>et al.</i>, 3DV'16], [Fu <i>et al.</i>, CVPR'18]), 
+            despite having much less parameters.
           </p>
           <div class='table-cover'>
             <table>
               <thead>
                 <tr class='border-under'>
                   <th>Method</th>
-                  <th>rel</th>
-                  <th>rms</th>
-                  <th>log10</th>
+                  <th>RMSE</th>
+                  <th>IRMSE</th>
+                  <th>AbsRel</th>
                   <th>delta1</th>
                   <th>delta2</th>
                   <th>delta3</th>
-                  <th>#param.</th>
+                  <th>#Param.</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    Eigen
-                    <i>et al.</i>
-                  </td>
-                  <td>.158</td>
-                  <td>.641</td>
-                  <td>-</td>
-                  <td>.769</td>
-                  <td>.950</td>
-                  <td>
-                    <b>.988</b>
-                  </td>
-                  <td>921K</td>
+                  <td>[Eigen <i>et al.</i>, ICCV'15]</td>
+                  <td>.5781</td>
+                  <td>.1028</td>
+                  <td>.1635</td>
+                  <td>.7533</td>
+                  <td>.9444</td>
+                  <td><b>.9866</b></td>
+                  <td>307K</td>
                 </tr>
+                  <td>[Laina <i>et al.</i>, 3DV'16]</td>
+                  <td>.5112</td>
+                  <td>.0933</td>
+                  <td>.1368</td>
+                  <td>.8149</td>
+                  <td>.9538</td>
+                  <td>.9881</td>
+                  <td>307K</td>
                 <tr class='border-under'>
-                  <td>
-                    Laina
-                    <i>et al.</i>
-                  </td>
-                  <td>
-                    <b>.127</b>
-                  </td>
-                  <td>.573</td>
-                  <td>
-                    <b>.055</b>
-                  </td>
-                  <td>
-                    <b>.811</b>
-                  </td>
-                  <td>.953</td>
-                  <td>
-                    <b>.988</b>
-                  </td>
-                  <td>921K</td>
+                  <td>[Fu <i>et al.</i>, CVPR'18]</td>
+                  <td>.5459</td>
+                  <td>.1007</td>
+                  <td><b>.1287</b></td>
+                  <td><b>.8258</b></td>
+                  <td>.9431</td>
+                  <td>.9776</td>
+                  <td>307K</td>
                 </tr>
                 <tr>
-                  <td>
-                    Ours
-                  </td>
-                  <td>.146</td>
-                  <td>
-                    <b>.530</b>
-                  </td>
-                  <td>.062</td>
-                  <td>.803</td>
-                  <td>
-                    <b>.954</b>
-                  </td>
-                  <td>
-                    <b>.988</b>
-                  </td>
-                  <td>
-                    <b>32K</b>
-                  </td>
+                  <td>Ours</td>
+                  <td><b>.5102</b></td>
+                  <td><b>.0905</b></td>
+                  <td>.1411</td>
+                  <td>.8178</td>
+                  <td><b>.9577</b></td>
+                  <td><b>.9893</b></td>
+                  <td><b>30K</b></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p>Since our depthmap is created by the 2D mesh extracted based on the canny edge, the object boundaries of our depthmap is clearer than that of the pixel-wise method.</p>
+          <p>Since our depthmap is created by the 2D mesh extracted based on the canny edge, its object boundaries are clearer than those of the deep depth prediction methods.</p>
           <table class='compare-images'>
             <thead>
               <tr>
