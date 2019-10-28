@@ -104,7 +104,7 @@
           </p>
         </section>
         <section>
-          <h2>Depthmap Prediction</h2>
+          <h2>Depth map Prediction</h2>
           <p>
             Quantitative (top) and qualitative (bottom) results showing our depth map rendered from predicted triangular-patch-cloud. 
             We evaluate our method using NYU Depth v2 dataset [Silberman <i>et al.</i>, ECCV'12], and evaluate its depth map using general error metrics.
@@ -167,74 +167,31 @@
               </tbody>
             </table>
           </div>
-          <p>Since our depthmap is created by the 2D mesh extracted based on the canny edge, its object boundaries are clearer than those of the deep depth prediction methods.</p>
+          <p>Since our depth map is created by the 2D mesh extracted based on the canny edge, its object boundaries are clearer than those of the deep depth prediction methods.</p>
           <table class='compare-images'>
             <thead>
               <tr>
                 <th>Input image</th>
                 <th>GT</th>
                 <th>Ours</th>
-                <th>
-                  Eigen
-                  <i>et al.</i>
-                </th>
-                <th>
-                  Laina
-                  <i>et al.</i>
-                </th>
+                <th>Laina <i>et al.</i></th>
+                <th>Fu <i>et al.</i></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000150_rgb.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000150_gt.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000150_ours.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000150_eigen_ori.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000150_laina_ori.png'>
-                </td>
+                <td><img src='MeshDepth_files/depthmap/000158.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000158_gt.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000158_ours.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000158_laina_raw.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000158_dorn_raw.png'></td>
               </tr>
               <tr>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000158_rgb.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000158_gt.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000158_ours.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000158_eigen_ori.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000158_laina_ori.png'>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000573_rgb.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000573_gt.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000573_ours.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000573_eigen_ori.png'>
-                </td>
-                <td>
-                  <img src='MeshDepth_files/depthmap/000573_laina_ori.png'>
-                </td>
+                <td><img src='MeshDepth_files/depthmap/000573.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000573_gt.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000573_ours.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000573_laina_raw.png'></td>
+                <td><img src='MeshDepth_files/depthmap/000573_dorn_raw.png'></td>
               </tr>
             </tbody>
           </table>
