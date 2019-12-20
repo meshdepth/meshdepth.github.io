@@ -258,12 +258,17 @@ p {
 .header-wrapper .files p {
   font-size: 25px;
   float: left;
+  margin: 5px;
+  margin-bottom: 30px;
 }
 @media screen and (max-width: 980px) {
   .header-wrapper .files p {
     font-size: 19px;
+    margin: 1px;
+    margin-bottom: 30px;
   }
 }
+/*
 .header-wrapper .files p:first-child {
   margin-right: 40px;
 }
@@ -275,6 +280,7 @@ p {
 .header-wrapper .files p:first-child a {
   color: #3376cb;
 }
+*/
 
 .contents {
   background-color: #000;
